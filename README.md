@@ -7,12 +7,13 @@ and client to communicate from this point forwards.
 
 ### Client Action:
 Generates a number of 'secrets' to send to the server. Each 'secret' is made
-up of:\n
-W1 + H1 + W2\n
+up of:
 
-W1: Word in plaintext\n
-H1: Hash of x concatenations of W1\n
-W2: Word in plaintext\n
+__W1 + H1 + W2__
+
+-  W1: Word in plaintext
+-  H1: Hash of x concatenations of W1
+-  W2: Word in plaintext
 
 ### Server Action:
 1. Solve the puzzle - pick a random 'secret' and start cracking the hash until
@@ -21,7 +22,8 @@ you get x.
 
 ### Client Action:
 Match the hash received H2 to pre-calculated hashes of x*W2's, and get the index x.
-\n
+
+
 From this point onwards: BOTH SIDES USE X AS ENCRYPTION KEY.
 
 
