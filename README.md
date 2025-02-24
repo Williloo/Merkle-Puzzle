@@ -1,7 +1,7 @@
-#Merkle Puzzle
+# Merkle Puzzle
 
-#Theory
-##Actions
+# Theory
+## Actions
 Client Side initiates the Merkle Puzzle to generate a unique key for server
 and client to communicate from this point forwards.
 
@@ -25,7 +25,7 @@ Match the hash received H2 to pre-calculated hashes of x*W2's, and get the index
 From this point onwards: BOTH SIDES USE X AS ENCRYPTION KEY.
 
 
-##Justification
+## Justification
 If an adversary had access to all communications, they have access to:
 1. All the 'secrets'
 2. H2
