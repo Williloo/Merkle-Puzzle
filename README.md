@@ -39,3 +39,4 @@ Can they use this information to beat the O(N*M) time asymetry?
 
 # TODO
 -  Change nonce between every message, encoding the current nonce with the previous cipher
+-  Figure out better delimiter method
