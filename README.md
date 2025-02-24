@@ -38,4 +38,5 @@ Can they use this information to beat the O(N^2) time asymetry?
   hashes for large concatenations of random words
 - If wanted to crack by iterating x concats of W2's...still have to try all of them indefinitely to match hash
 
- 
+# TODO
+-  Change nonce between every message, encoding the current nonce with the previous cipher
