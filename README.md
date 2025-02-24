@@ -5,23 +5,23 @@
 Client Side initiates the Merkle Puzzle to generate a unique key for server
 and client to communicate from this point forwards.
 
-Client Action:
+### Client Action:
 Generates a number of 'secrets' to send to the server. Each 'secret' is made
-up of:
-W1 + H1 + W2
+up of:\n
+W1 + H1 + W2\n
 
-W1: Word in plaintext
-H1: Hash of x concatenations of W1
-W2: Word in plaintext
+W1: Word in plaintext\n
+H1: Hash of x concatenations of W1\n
+W2: Word in plaintext\n
 
-Server Action:
+### Server Action:
 1. Solve the puzzle - pick a random 'secret' and start cracking the hash until
 you get x.
 2. Send back to the server H2, the hash of W2 concatenated x times.
 
-Client Action:
+### Client Action:
 Match the hash received H2 to pre-calculated hashes of x*W2's, and get the index x.
-
+\n
 From this point onwards: BOTH SIDES USE X AS ENCRYPTION KEY.
 
 
