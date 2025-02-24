@@ -9,22 +9,21 @@ and client to communicate from this point forwards.
 Generates a number of 'secrets' to send to the server. Each 'secret' is made
 up of:
 
-__W1 + H1 + W2__
+__B1 + H1 + B2__
 
--  W1: Word in plaintext
--  H1: Hash of x concatenations of W1
--  W2: Word in plaintext
+-  B1: Random 16 bytes
+-  H1: Hash of x concatenations of B1
+-  B2: Random 16 bytes 
 
 ### Server Action:
 1. Solve the puzzle - pick a random 'secret' and start cracking the hash until
 you get x.
-2. Send back to the server H2, the hash of W2 concatenated x times.
+2. Send back to the server H2, the hash of B1 concatenated x times.
 
 ### Client Action:
-Match the hash received H2 to pre-calculated hashes of x*W2's, and get the index x.
+Match the hash received H2 to pre-calculated hashes of x*B2's, and get the index x.
 
-
-From this point onwards: BOTH SIDES USE X AS ENCRYPTION KEY.
+From this point onwards: BOTH SIDES USE X*B2 AS ENCRYPTION KEY.
 
 
 ## Justification
@@ -32,7 +31,7 @@ If an adversary had access to all communications, they have access to:
 1. All the 'secrets'
 2. H2
 
-Can they use this information to beat the O(N^2) time asymetry? 
+Can they use this information to beat the O(N*M) time asymetry? 
 - No way to get information about secrets without cracking secrets...no crossover effect
 - As generating from all English words, no list to start off with, except generating
   hashes for large concatenations of random words
